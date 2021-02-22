@@ -5,9 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import firebase from 'firebase/app';
+import 'firebase/auth';
+import { AuthProvider } from './auth/auth-povider';
 
 fetch('/__/firebase/init.json').then(async response => {
   firebase.initializeApp(await response.json());
+  firebase.auth().onAuthStateChanged(user => {
+    AuthProvider.isAuthenticated = !!user;
+  });
   ReactDOM.render(
     <React.StrictMode>
       <App />

@@ -1,29 +1,22 @@
 import React from 'react';
-import firebase from 'firebase';
+import { AuthProvider } from './auth-povider';
 
 export const LoginButton = () => {
-  const login = () => {
-    let provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('email');
-    firebase.auth().signInWithRedirect(provider);
-  }
-  
   return (
-    <button styles={styles} onClick={login}>Login</button>
+    <button style={styles} onClick={AuthProvider.authenticate}>Login</button>
   );
 }
 
 export const LogoutButton = () => {
-  const logout = () => {
-    firebase.auth().signOut();
-  }
   return (
-    <button styles={styles} onClick={logout}>Logout</button>
+    <button style={styles} onClick={AuthProvider.signout}>Logout</button>
   )
 }
 
 const styles = {
-  backgroundColor: 'blue',
-  borderRadius: '5px',
-  color: 'white'
+  backgroundColor: 'indigo',
+  borderRadius: '5px 15px',
+  color: 'white',
+  padding: '3px 8px 3px 8px',
+  fontWeight: 'bold'
 };
