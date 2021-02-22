@@ -7,10 +7,12 @@ import { Navigation } from './Navigation';
 import { Home } from './Home';
 import { About } from './About';
 import { Login } from './Login';
+import { AuthProvider } from './auth/auth-povider';
 
 function App() {
   return (
-      <Router>
+    <Router>
+      <AuthProvider>
         <Navigation />
         <Switch>
           <ProtectedRoute exact path='/home'>
@@ -19,7 +21,8 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/login' component={Login} />
         </Switch>
-      </Router>
+      </AuthProvider>
+    </Router>
   );
 }
 
