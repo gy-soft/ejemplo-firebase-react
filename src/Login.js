@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginButton } from "./auth/login-button";
+import { LoginButton } from "./auth/auth-button";
 
 export const Login = () => (
   <>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LogoutButton } from './auth/login-button';
+import { LogoutButton } from './auth/auth-button';
 
 export const Home = () => (
     <>
