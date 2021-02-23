@@ -15,7 +15,7 @@ function App() {
       <AuthProvider>
         <Navigation />
         <Switch>
-          <ProtectedRoute exact path='/home'>
+          <ProtectedRoute exact path={['/home','/']}>
             <Home />
           </ProtectedRoute>
           <Route exact path='/about' component={About} />
